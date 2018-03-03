@@ -24,7 +24,7 @@ def start():
     board_width = data.get('width')
     board_height = data.get('height')
 
-    head_url = '%s://%s/static/download.png' % (
+    head_url = '%s://%s/static/download.jpg' % (
         bottle.request.urlparts.scheme,
         bottle.request.urlparts.netloc
     )
@@ -61,7 +61,7 @@ def move():
     print(directions)
     return {
         'move': direction,
-        'taunt': 'battlesnake-python!'
+        'taunt': "{}".format(directions)
     }
 
 
