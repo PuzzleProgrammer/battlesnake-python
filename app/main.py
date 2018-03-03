@@ -43,7 +43,7 @@ def move():
 
     # TODO: Do things with data
     # top left is 0,0
-    headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]]
+    headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]}
     grid = [board_width][board_height]
     populateGrid(grid);
     directions = ['up', 'down', 'left', 'right']
