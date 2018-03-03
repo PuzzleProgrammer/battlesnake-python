@@ -4,8 +4,12 @@ import random
 
 #2018
 
-def populateGrid(grid):
-    return
+board_width = 0
+board_height = 0
+
+def populateGrid(data):
+	grid = [[0 for x in range(board_height)] for x in range(board_width)]
+    return grid
 
 @bottle.route('/')
 def static():
@@ -44,8 +48,8 @@ def move():
     # TODO: Do things with data
     # top left is 0,0
     headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]}
-    grid = [board_width][board_height]
-    populateGrid(grid);
+  #  grid = [board_width][board_height]
+    grid = populateGrid(data);
     directions = ['up', 'down', 'left', 'right']
     
     if (headPos['x'] == 0 or grid[headPos['x']-1,headPos['y']] != 0):
@@ -58,7 +62,7 @@ def move():
         directions.remove('down')
     
     direction = random.choice(directions)
-    print(directions)
+ #   print(directions)
     return {
         'move': direction,
         'taunt': "{}".format(directions)
