@@ -60,8 +60,10 @@ def move():
     #    directions.remove('up')
     #if (headPos['y'] == board_height-1 or grid[headPos['x'],headPos['y']+1] != 0):
     #    directions.remove('down')
+	
+	
     
-    direction = random.choice(directions)
+    direction = random.choice(goToTarget(data.you, 0,0,directions))
    # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': 'left',
