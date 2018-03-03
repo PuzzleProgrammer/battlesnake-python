@@ -1,6 +1,7 @@
 import bottle
 import os
 
+#2018
 
 @bottle.route('/static/<path:path>')
 def static(path):
