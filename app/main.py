@@ -48,13 +48,13 @@ def move():
     populateGrid(grid);
     directions = ['up', 'down', 'left', 'right']
     
-    if (headPos['x'] == 0 || grid[headPos['x']-1,headPos['y']] != 0):
+    if (headPos['x'] == 0 or grid[headPos['x']-1,headPos['y']] != 0):
         directions.remove('left')
-    if (headPos['x'] == board_width-1 || grid[headPos['x']+1,headPos['y']] != 0):
+    if (headPos['x'] == board_width-1 or grid[headPos['x']+1,headPos['y']] != 0):
         directions.remove('right')
-    if (headPos['y'] == 0 || grid[headPos['x'],headPos['y']-1] != 0):
+    if (headPos['y'] == 0 or grid[headPos['x'],headPos['y']-1] != 0):
         directions.remove('up')
-    if (headPos['y'] == board_height-1 || grid[headPos['x'],headPos['y']+1] != 0):
+    if (headPos['y'] == board_height-1 or grid[headPos['x'],headPos['y']+1] != 0):
         directions.remove('down')
     
     direction = random.choice(directions)
