@@ -8,7 +8,7 @@ board_width = 0
 board_height = 0
 
 def populateGrid(data):
-	grid = [[0 for x in range(board_height)] for x in range(board_width)]
+    grid = [[0 for x in range(board_height)] for x in range(board_width)]
     return grid
 
 @bottle.route('/')
