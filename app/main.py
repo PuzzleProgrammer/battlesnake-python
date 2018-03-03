@@ -5,7 +5,7 @@ import random
 #2018
 
 def populateGrid(grid):
-	return
+    return
 
 @bottle.route('/')
 def static():
@@ -42,20 +42,20 @@ def move():
     data = bottle.request.json
 
     # TODO: Do things with data
-	# top left is 0,0
-	headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]]
-	grid = [board_width][board_height]
-	populateGrid(grid);
+    # top left is 0,0
+    headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]]
+    grid = [board_width][board_height]
+    populateGrid(grid);
     directions = ['up', 'down', 'left', 'right']
-	
-	if (headPos['x'] == 0 || grid[headPos['x']-1][headPos['y'] != 0]):
-		directions.remove('left')
-	if (headPos['x'] == board_width-1 || grid[headPos['x']+1,headPos['y'] != 0]):
-		directions.remove('right')
-	if (headPos['y'] == 0 || grid[headPos['x']][headPos['y']-1 != 0]):
-		directions.remove('up')
-	if (headPos['y'] == board_height-1 || grid[headPos['x'],headPos['y']+1] != 0]):
-		directions.remove('down')
+    
+    if (headPos['x'] == 0 || grid[headPos['x']-1,headPos['y']] != 0):
+        directions.remove('left')
+    if (headPos['x'] == board_width-1 || grid[headPos['x']+1,headPos['y']] != 0):
+        directions.remove('right')
+    if (headPos['y'] == 0 || grid[headPos['x'],headPos['y']-1] != 0):
+        directions.remove('up')
+    if (headPos['y'] == board_height-1 || grid[headPos['x'],headPos['y']+1] != 0):
+        directions.remove('down')
     
     direction = random.choice(directions)
     print directions
