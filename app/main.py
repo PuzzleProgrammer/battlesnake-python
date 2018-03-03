@@ -68,6 +68,26 @@ def move():
         'taunt': "{}".format(directions)
     }
 
+def goToTarget(mySnake, x, y, validDirs):
+    xDist = mySnake.body.data[0].x - x
+    yDist = mySnake.body.data[0].y - y
+
+    desiredDirs = []
+
+    if xDist > 0 and "left" in validDirs:
+        desiredDirs += "left"
+    elif xDist < 0 and "right" in validDirs:
+        desiredDirs += "right"
+
+    if yDist > 0 and "up" in validDirs:
+        desiredDirs += "up"
+    elif yDist < 0 and "down" in validDirs:
+        desiredDirs += "down"
+
+    if desiredDirs.count == 0:
+        return validDirs
+
+    return desiredDirs
 
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
