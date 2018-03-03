@@ -64,8 +64,8 @@ def move():
     direction = random.choice(directions)
  #   print(directions)
     return {
-        'move': direction,
-        'taunt': "{}".format(directions)
+        'move': 'left',
+        'taunt': '{}'.format(len(directions))
     }
 
 def goToTarget(mySnake, x, y, validDirs):
