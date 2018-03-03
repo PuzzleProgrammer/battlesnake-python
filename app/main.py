@@ -7,9 +7,9 @@ import random
 board_width = 0
 board_height = 0
 
-def populateGrid(data):
-    grid = [[0 for x in range(board_height)] for x in range(board_width)]
-    return grid
+#def populateGrid(data):
+#    grid = [[0 for x in range(board_height)] for x in range(board_width)]
+#    return grid
 
 @bottle.route('/')
 def static():
@@ -47,7 +47,7 @@ def move():
 
     # TODO: Do things with data
     # top left is 0,0
-    headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]}
+    #headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]}
   #  grid = [board_width][board_height]
   #  grid = populateGrid(data);
     directions = ['up', 'down', 'left', 'right']
@@ -62,32 +62,32 @@ def move():
     #    directions.remove('down')
     
     direction = random.choice(directions)
-    print("" + headPose[0] + ", " + headPose[1])
+   # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': 'left',
         'taunt': '{}'.format(len(directions))
     }
 
-def goToTarget(mySnake, x, y, validDirs):
-    xDist = mySnake.body.data[0].x - x
-    yDist = mySnake.body.data[0].y - y
+# def goToTarget(mySnake, x, y, validDirs):
+    # xDist = mySnake.body.data[0].x - x
+    # yDist = mySnake.body.data[0].y - y
 
-    desiredDirs = []
+    # desiredDirs = []
 
-    if xDist > 0 and "left" in validDirs:
-        desiredDirs += "left"
-    elif xDist < 0 and "right" in validDirs:
-        desiredDirs += "right"
+    # if xDist > 0 and "left" in validDirs:
+        # desiredDirs += "left"
+    # elif xDist < 0 and "right" in validDirs:
+        # desiredDirs += "right"
 
-    if yDist > 0 and "up" in validDirs:
-        desiredDirs += "up"
-    elif yDist < 0 and "down" in validDirs:
-        desiredDirs += "down"
+    # if yDist > 0 and "up" in validDirs:
+        # desiredDirs += "up"
+    # elif yDist < 0 and "down" in validDirs:
+        # desiredDirs += "down"
 
-    if desiredDirs.count == 0:
-        return validDirs
+    # if desiredDirs.count == 0:
+        # return validDirs
 
-    return desiredDirs
+    # return desiredDirs
 
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
