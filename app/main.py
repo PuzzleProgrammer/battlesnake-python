@@ -4,9 +4,9 @@ import random
 
 #2018
 
-#def populateGrid(data):
-#    grid = [[0 for x in range(board_height)] for x in range(board_width)]
-#    return grid
+def populateGrid(data):
+    grid = [[0 for x in range(data['height'])] for x in range(data['width'])]
+    return grid
 
 @bottle.route('/')
 def static():
