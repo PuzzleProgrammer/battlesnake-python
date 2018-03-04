@@ -13,10 +13,10 @@ def gridPop(data):
 
 
 def goToTarget(mySnake, x, y, validDirs):
-    xDist = 1#mySnake['body']['data'][0]['x'] - x
-    yDist = 1#mySnake['body']['data'][0]['y'] - y
+    xDist = mySnake['body']['data'][0]['x'] - x
+    yDist = mySnake['body']['data'][0]['y'] - y
 
-    # desiredDirs = []
+    desiredDirs = []
 
     # if xDist > 0 and "left" in validDirs:
         # desiredDirs += "left"
@@ -28,10 +28,10 @@ def goToTarget(mySnake, x, y, validDirs):
     # elif yDist < 0 and "down" in validDirs:
         # desiredDirs += "down"
 
-    # if len(desiredDirs) == 0:
-        # return validDirs
+    if len(desiredDirs) == 0:
+        return validDirs
 
-    return validDirs
+    return desiredDirs
 
 @bottle.route('/')
 def static():
