@@ -18,15 +18,15 @@ def goToTarget(mySnake, x, y, validDirs):
 
     desiredDirs = []
 
-    # if xDist > 0 and "left" in validDirs:
-        # desiredDirs += "left"
-    # elif xDist < 0 and "right" in validDirs:
-        # desiredDirs += "right"
+    if xDist > 0 and "left" in validDirs:
+        desiredDirs.append("left")
+    elif xDist < 0 and "right" in validDirs:
+        desiredDirs.append("right")
 
-    # if yDist > 0 and "up" in validDirs:
-        # desiredDirs += "up"
-    # elif yDist < 0 and "down" in validDirs:
-        # desiredDirs += "down"
+    if yDist > 0 and "up" in validDirs:
+        desiredDirs.append("up")
+    elif yDist < 0 and "down" in validDirs:
+        desiredDirs.append("down")
 
     if len(desiredDirs) == 0:
         return validDirs
