@@ -64,7 +64,7 @@ def move():
    # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': 'left',
-        'taunt': '{}'.format(len(directions),)
+        'taunt': '{}'.format(len(directions))
     }
 
 def goToTarget(mySnake, x, y, validDirs):
