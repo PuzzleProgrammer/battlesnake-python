@@ -6,7 +6,7 @@ import random
 
 def gridPop(data):
     grid = [[0 for x in range(data['height'])] for x in range(data['width'])]
-	return grid
+    return grid
 
 
 def goToTarget(mySnake, x, y, validDirs):
