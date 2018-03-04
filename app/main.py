@@ -9,9 +9,9 @@ def gridPop(data):
     return grid
 
 
-# def goToTarget(mySnake, x, y, validDirs):
-    # xDist = mySnake['body']['data'][0]['x'] - x
-    # yDist = mySnake['body']['data'][0]['y'] - y
+def goToTarget(mySnake, x, y, validDirs):
+    xDist = mySnake['body']['data'][0]['x'] - x
+    yDist = mySnake['body']['data'][0]['y'] - y
 
     # desiredDirs = []
 
@@ -28,7 +28,7 @@ def gridPop(data):
     # if len(desiredDirs) == 0:
         # return validDirs
 
-    # return desiredDirs
+    return validDirs
 
 @bottle.route('/')
 def static():
@@ -79,7 +79,7 @@ def move():
     if (headPos['y'] == data['height']-1 or grid[headPos['x']][headPos['y']+1] != 0):
         directions.remove('down')
     
-    #goToTarget(data['you'],data['food']['data']['x'],data['food']['data']['y'],directions)
+    goToTarget(data['you'], data['food']['data']['x'], data['food']['data']['y'], directions)
     
     direction = random.choice(directions)
    # print("" + headPose[0] + ", " + headPose[1])
