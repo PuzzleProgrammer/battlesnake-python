@@ -45,7 +45,7 @@ def move():
     # TODO: Do things with data
     # top left is 0,0
     headPos = {'x':data['you']['body']['data'][0]["x"], 'y':data['you']['body']['data'][0]["y"]}
-  #  grid = [data['width']][data['height']]
+    grid = [data['width']][data['height']]
   #  grid = populateGrid(data);
     directions = ['up', 'down', 'left', 'right']
     
@@ -63,7 +63,7 @@ def move():
     direction = random.choice(directions)
    # print("" + headPose[0] + ", " + headPose[1])
     return {
-        'move': 'left',
+        'move': direction,
         'taunt': '{}'.format(len(directions))
     }
 
