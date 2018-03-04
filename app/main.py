@@ -12,26 +12,26 @@ def gridPop(data):
     return grid
 
 
-# def goToTarget(mySnake, x, y, validDirs):
-    # xDist = mySnake['body']['data'][0]['x'] - x
-    # yDist = mySnake['body']['data'][0]['y'] - y
+def goToTarget(mySnake, x, y, validDirs):
+    xDist = mySnake['body']['data'][0]['x'] - x
+    yDist = mySnake['body']['data'][0]['y'] - y
 
-    # desiredDirs = []
+    desiredDirs = []
 
-    # if xDist > 0 and "left" in validDirs:
-        # desiredDirs += "left"
-    # elif xDist < 0 and "right" in validDirs:
-        # desiredDirs += "right"
+    if xDist > 0 and "left" in validDirs:
+        desiredDirs += "left"
+    elif xDist < 0 and "right" in validDirs:
+        desiredDirs += "right"
 
-    # if yDist > 0 and "up" in validDirs:
-        # desiredDirs += "up"
-    # elif yDist < 0 and "down" in validDirs:
-        # desiredDirs += "down"
+    if yDist > 0 and "up" in validDirs:
+        desiredDirs += "up"
+    elif yDist < 0 and "down" in validDirs:
+        desiredDirs += "down"
 
-    # if len(desiredDirs) == 0:
-        # return validDirs
+    if len(desiredDirs) == 0:
+        return validDirs
 
-    # return desiredDirs
+    return desiredDirs
 
 @bottle.route('/')
 def static():
@@ -82,7 +82,7 @@ def move():
     if (headPos['y'] == data['height']-1 or grid[headPos['x']][headPos['y']+1] != 0):
         directions.remove('down')
     
-    #goToTarget(data['you'],data['food']['data']['x'],data['food']['data']['y'],directions)
+    goToTarget(data['you'],data['food']['data'][0]['x'],data['food']['data'][0]['y'],directions)
     
     direction = random.choice(directions)
    # print("" + headPose[0] + ", " + headPose[1])
