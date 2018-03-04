@@ -6,6 +6,9 @@ import random
 
 def gridPop(data):
     grid = [[0 for x in range(data['height'])] for x in range(data['width'])]
+    for snakes in data['snakes']['data']:
+        for body in snakes['body']['data']:
+            grid[body['x']][body['y']] = 1
     return grid
 
 
