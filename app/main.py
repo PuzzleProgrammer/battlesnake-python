@@ -81,8 +81,12 @@ def move():
         directions.remove('up')
     if (headPos['y'] == data['height']-1 or grid[headPos['x']][headPos['y']+1] != 0):
         directions.remove('down')
+		
+	# xPos=0
+	# yPos=0
+	# if 
     
-    directions = goToTarget(data['you'],'x':data['you']['body']['data'][-1]["x"],'x':data['you']['body']['data'][-1]["y"],directions)
+    directions = goToTarget(data['you'],data['you']['body']['data'][-1]["x"],data['you']['body']['data'][-1]["y"],directions)
     
     direction = random.choice(directions)
    # print("" + headPose[0] + ", " + headPose[1])
