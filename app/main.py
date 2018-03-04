@@ -10,8 +10,8 @@ def gridPop(data):
 
 
 def goToTarget(mySnake, x, y, validDirs):
-    xDist = mySnake['body']['data'][0]['x'] - x
-    yDist = mySnake['body']['data'][0]['y'] - y
+    xDist = 1 #mySnake['body']['data'][0]['x'] - x
+    yDist = 1 #mySnake['body']['data'][0]['y'] - y
 
     # desiredDirs = []
 
