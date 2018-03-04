@@ -63,7 +63,7 @@ def move():
 	
 	
     
-    direction = random.choice(goToTarget(data.you, 0,0,directions))
+    direction = random.choice(directions)
    # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': 'left',
