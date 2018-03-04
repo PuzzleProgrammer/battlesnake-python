@@ -45,14 +45,14 @@ def move():
     grid = [[0 for x in range(data['height'])] for x in range(data['width'])]
     directions = ['up', 'down', 'left', 'right']
     
-     # if (headPos['x'] == 0 or grid[headPos['x']-1][headPos['y']] != 0):
-         # directions.remove('left')
-     # if (headPos['x'] == board_width-1 or grid[headPos['x']+1][headPos['y']] != 0):
-         # directions.remove('right')
-     # if (headPos['y'] == 0 or grid[headPos['x']][headPos['y']-1] != 0):
-         # directions.remove('up')
-     # if (headPos['y'] == board_height-1 or grid[headPos['x']][headPos['y']+1] != 0):
-         # directions.remove('down')
+      if (headPos['x'] == 0 or grid[headPos['x']-1][headPos['y']] != 0):
+          directions.remove('left')
+      if (headPos['x'] == board_width-1 or grid[headPos['x']+1][headPos['y']] != 0):
+          directions.remove('right')
+      if (headPos['y'] == 0 or grid[headPos['x']][headPos['y']-1] != 0):
+          directions.remove('up')
+      if (headPos['y'] == board_height-1 or grid[headPos['x']][headPos['y']+1] != 0):
+          directions.remove('down')
 	
 	
     
