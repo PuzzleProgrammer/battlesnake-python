@@ -41,20 +41,19 @@ def move():
     # TODO: Do things with data
     # top left is 0,0
     headPos = {'x':data['you']['body']['data'][0]["x"], 'y':data['you']['body']['data'][0]["y"]}
-  #  grid = [data['width']][data['height']]
     grid = [[0 for x in range(data['height'])] for x in range(data['width'])]
     directions = ['up', 'down', 'left', 'right']
     
     if (headPos['x'] == 0 or grid[headPos['x']-1][headPos['y']] != 0):
         directions.remove('left')
-    if (headPos['x'] == board_width-1 or grid[headPos['x']+1][headPos['y']] != 0):
+    if (headPos['x'] == data['width']-1 or grid[headPos['x']+1][headPos['y']] != 0):
         directions.remove('right')
     if (headPos['y'] == 0 or grid[headPos['x']][headPos['y']-1] != 0):
         directions.remove('up')
-    if (headPos['y'] == board_height-1 or grid[headPos['x']][headPos['y']+1] != 0):
+    if (headPos['y'] == data['height']-1 or grid[headPos['x']][headPos['y']+1] != 0):
         directions.remove('down')
     
-  #  goToTarget()
+#    goToTarget(data['you'],data['food']['data'])
     
     direction = random.choice(directions)
    # print("" + headPose[0] + ", " + headPose[1])
@@ -63,26 +62,26 @@ def move():
         'taunt': '{}'.format(headPos['x'])
     }
 
-def goToTarget(mySnake, x, y, validDirs):
-    xDist = mySnake['body']['data'][0]['x'] - x
-    yDist = mySnake['body']['data'][0]['y'] - y
+# def goToTarget(mySnake, x, y, validDirs):
+    # xDist = mySnake['body']['data'][0]['x'] - x
+    # yDist = mySnake['body']['data'][0]['y'] - y
 
-    desiredDirs = []
+    # desiredDirs = []
 
-    if xDist > 0 and "left" in validDirs:
-        desiredDirs += "left"
-    elif xDist < 0 and "right" in validDirs:
-        desiredDirs += "right"
+    # if xDist > 0 and "left" in validDirs:
+        # desiredDirs += "left"
+    # elif xDist < 0 and "right" in validDirs:
+        # desiredDirs += "right"
 
-    if yDist > 0 and "up" in validDirs:
-        desiredDirs += "up"
-    elif yDist < 0 and "down" in validDirs:
-        desiredDirs += "down"
+    # if yDist > 0 and "up" in validDirs:
+        # desiredDirs += "up"
+    # elif yDist < 0 and "down" in validDirs:
+        # desiredDirs += "down"
 
-    if len(desiredDirs) == 0:
-        return validDirs
+    # if len(desiredDirs) == 0:
+        # return validDirs
 
-    return desiredDirs
+    # return desiredDirs
 
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
