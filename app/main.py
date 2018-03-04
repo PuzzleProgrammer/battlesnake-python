@@ -67,12 +67,12 @@ def move():
    # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': 'left',
-        'taunt': '{}'.format(len(directions))
+        'taunt': '{} {}'.format(len(directions), board_width)
     }
 
 def goToTarget(mySnake, x, y, validDirs):
-    xDist = mySnake.body.data[0].x - x
-    yDist = mySnake.body.data[0].y - y
+    xDist = mySnake.body.data[0]['x'] - x
+    yDist = mySnake.body.data[0]['y'] - y
 
     desiredDirs = []
 
