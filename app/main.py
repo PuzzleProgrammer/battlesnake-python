@@ -45,7 +45,7 @@ def move():
     # TODO: Do things with data
     # top left is 0,0
     headPos = {'x':data['you']['body']['data'][0]["x"], 'y':data['you']['body']['data'][0]["y"]}
-    grid = [board_width][board_height]
+    grid = [data['width']][data['height']]
     grid = populateGrid(data);
     directions = ['up', 'down', 'left', 'right']
     
@@ -68,8 +68,8 @@ def move():
     }
 
 # def goToTarget(mySnake, x, y, validDirs):
-    # xDist = mySnake.body.data[0]['x'] - x
-    # yDist = mySnake.body.data[0]['y'] - y
+    # xDist = mySnake['body']['data'][0]['x'] - x
+    # yDist = mySnake['body']['data'][0]['y'] - y
 
     # desiredDirs = []
 
