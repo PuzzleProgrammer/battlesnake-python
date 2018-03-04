@@ -94,7 +94,7 @@ def move():
    # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': direction,
-        'taunt': '{}'.format(direction)
+        'taunt': 'AAAAAAAAAAAAAAAGHH!'
     }
 
 
