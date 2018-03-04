@@ -4,9 +4,6 @@ import random
 
 #2018
 
-board_width = 0
-board_height = 0
-
 #def populateGrid(data):
 #    grid = [[0 for x in range(board_height)] for x in range(board_width)]
 #    return grid
@@ -47,7 +44,7 @@ def move():
 
     # TODO: Do things with data
     # top left is 0,0
-    #headPos = {'x':data.you.body.data[0]["x"], 'y':data.you.body.data[0]["y"]}
+    headPos = {'x':data['you']['body']['data'][0]["x"], 'y':data['you']['body']['data'][0]["y"]}
   #  grid = [board_width][board_height]
   #  grid = populateGrid(data);
     directions = ['up', 'down', 'left', 'right']
@@ -67,7 +64,7 @@ def move():
    # print("" + headPose[0] + ", " + headPose[1])
     return {
         'move': 'left',
-        'taunt': '{} {}'.format(len(directions), board_width)
+        'taunt': '{} {}'.format(len(directions), data['width'])
     }
 
 def goToTarget(mySnake, x, y, validDirs):
