@@ -82,11 +82,13 @@ def move():
     if (headPos['y'] == data['height']-1 or grid[headPos['x']][headPos['y']+1] != 0):
         directions.remove('down')
         
-    xPos=data['you']['body']['data'][-1]["x"]
-    yPos=data['you']['body']['data'][-1]["y"]
-    if data['you']['health'] < 50:
-        xPos = data['food']['data'][0]['x']
-        xPos = data['food']['data'][0]['y']
+    # xPos=data['you']['body']['data'][-1]["x"]
+    # yPos=data['you']['body']['data'][-1]["y"]
+    # if data['you']['health'] < 50:
+        # xPos = data['food']['data'][0]['x']
+        # yPos = data['food']['data'][0]['y']
+    xPos = 7
+    yPos = 7
     
     directions = goToTarget(data['you'],xPos,yPos,directions)
     
